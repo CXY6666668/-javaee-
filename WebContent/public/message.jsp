@@ -8,8 +8,8 @@
 <title>給管理員留言</title>
 <style type="text/css">
 td{ 
-font-size: 12px;
-}
+font-size: 12px; 
+} 
 </style>
 <script type="text/javascript"src="/xyjygl/ckeditor/ckeditor.js"></script>
 </head>

@@ -181,10 +181,10 @@ public class UserDaoImpl implements UserDao {
 
 		try {
 			// 2.执行条件查询，定义PreparedStatement对象
-			pstat = connection.prepareStatement("select * from user " + dopage.getSql() + "limit"
-					+ (dopage.getNowPage() - 1) * dopage.getPageSize()+","+ dopage.getPageSize());
-//			pstat=con.prepareStatement("select * from user "+dopage.getSql()+" limit "
-//+(dopage.getNowPage()-1)*dopage.getPageSize()+","+dopage.getPageSize());
+
+			pstat = connection.prepareStatement("select * from user " + dopage.getSql() + " limit "
+					+ (dopage.getNowPage() - 1) * dopage.getPageSize() + "," + dopage.getPageSize());
+
 			// 3.执行查询
 			rs = pstat.executeQuery();
 			// 4.处理结果集

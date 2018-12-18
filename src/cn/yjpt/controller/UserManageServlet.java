@@ -73,7 +73,8 @@ public class UserManageServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				User loginUser = (User) session.getAttribute("user");
 				System.out.println(loginUser.getUsername() + loginUser.getUsertypes());
-				System.out.println(loginUser.getPassword() + loginUser.getId());
+				// System.out.println(loginUser.getPassword() +
+				// loginUser.getId());
 
 				// 如果是管理员修改密码
 				if (loginUser.getUsertypes().equals("admin")) {
@@ -148,6 +149,54 @@ public class UserManageServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			ud.invalid(id);
+			this.gotoPage("userManage?action=list", request, response);
+		}
+		if (action.equals("active")) {
+			// 使用户可以登录
+			int id = 0;
+			try {
+				id = Integer.parseInt(request.getParameter("id"));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
+			ud.activeUser(id);
+			this.gotoPage("userManage?action=list", request, response);
+
+		}
+		if (action.equals("update")) {
+			User user = new User();
+			int id = 0;
+			try {
+				id = Integer.parseInt(request.getParameter("id"));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
+			user.setId(id);
+			user.setPassword(request.getParameter("password"));
+			boolean flag = ud.updatePwd(user);
+			if (flag) {
+				HttpSession session = request.getSession();
+				User loginUser = (User) session.getAttribute("user");
+				System.out.println(loginUser.getUsername() + loginUser.getUsertypes());
+				// 如果是管理员修改用户密码
+				if (loginUser.getUsertypes().equals("admin")) {
+					this.gotoPage("userManage?action=list", request, response);
+				} else {
+					this.gotoPage("public/success.jsp", request, response);
+				}
+			} else {
+				this.gotoPage("public/error.jsp", request, response);
+			}
+		}
+		if (action.equals("delete")) {
+			User user = new User();
+			int id = 0;
+			try {
+				id = Integer.parseInt(request.getParameter("id"));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
+			ud.deleteUser(id);
 			this.gotoPage("userManage?action=list", request, response);
 		}
 

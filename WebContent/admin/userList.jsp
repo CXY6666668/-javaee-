@@ -152,8 +152,7 @@
 									href="/xyjygl/userManage?action=list&page=${dopage.nowPage-1 }&sql="${dopage.sql }">上一页</a>
 &nbsp;&nbsp;
 </c:if> <c:if test="${dopage.nowPage<dopage.totalPage}">
-								<a
-									href="/xyjygl/userManage?action=list&page=${dopage.nowPage+1 }&sql="${dopage.sql }">下一页</a>
+								<a href="/xyjygl/userManage?action=list&page=${dopage.nowPage+1 }&sql="${dopage.sql }">下一页</a>
 &nbsp;&nbsp;
 </c:if> <a
 							href="/xyjygl/userManage?action=list&page=${dopage.totalPage }&sql=${dopage.sql}">末页</a>
