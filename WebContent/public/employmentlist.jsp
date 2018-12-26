@@ -21,11 +21,11 @@
         <c:set var="list"  value="${dopage.list }"></c:set>	
         <table width="80%" border="1">
            <tr bgcolor="#DCDCDC">
+              <th width="20%" height="30px">学生姓名</th>
+              <th width="20%" height="30px">学校名称</th>
               <th width="20%" height="30px">公司名称</th>
-              <th width="20%" height="30px">单位性质</th>
-              <th width="20%" height="30px">营业执照号</th>
               <th width="20%" height="30px">所属行业</th>
-              <th width="20%" height="30px">操作</th>              
+              <th width="20%" height="30px">就业岗位</th>              
            </tr>           
            <c:forEach var="employment" items="${list}">
             <tr>
@@ -41,16 +41,19 @@
               <td align="center" height="26px">
                 <c:out value="${employment.position}"></c:out>
               </td>
+               <td align="center" height="26px">
+                <c:out value="${employment.position}"></c:out>
+              </td>
           |
-              <td align="center" height="26px">                
+           <!--   <td align="center" height="26px">                
                 <a href="/xyjygl/employmentManage?action=edit&eid=${employment.eid}">修改</a>|
                 <a href="/xyjygl/employmentManage?action=delete&eid=${employment.eid}">删除</a>
               </td>
-              
+               --> 
             </tr>
            </c:forEach>
            <tr>
-				<td colspan="5" align="right">
+			  <td colspan="5" align="right">
 					<a href="/xyjygl/employmentManage?action=list&page=1&sql=${dopage.sql}">首页</a>
 					&nbsp;&nbsp;
 					<c:if test="${dopage.nowPage-1>0}">
@@ -67,6 +70,7 @@
 					<a 	href="/xyjygl/employmentManage?action=list&page=${dopage.totalPage}&sql=${dopage.sql}">末页</a>
 					&nbsp;&nbsp;共${dopage.totalPage}页
 				</td>
+			
 				
 			</tr>
            <tr>

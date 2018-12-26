@@ -120,10 +120,48 @@ public class ResumeManageServlet extends HttpServlet {
 			}
 
 		}
-		if (action.equals("edit")) {
 
+		if (action.equals("edit")) {
+			Resume resume = new Resume();
+			User user = (User) session.getAttribute("user");
+			int sid = 0;
+			sid = user.getId();
+			resume = rd.lookResume(sid);
+			request.setAttribute("resume", resume);
+			this.gotoPage("stu/updateresume.jsp", request, response);
 		}
 
+		if (action.equals("update")) {
+			Resume resume = new Resume();
+			int sid = 0;
+			sid = Integer.parseInt(request.getParameter("sid"));
+			resume.setSid(sid);
+			resume.setSname(request.getParameter("sname"));
+			resume.setGender(request.getParameter("gender"));
+			resume.setBirthdate(request.getParameter("birthdate"));
+			resume.setNation(request.getParameter("nation"));
+			resume.setPolitics(request.getParameter("politics"));
+			resume.setGraduation(request.getParameter("graduation"));
+			resume.setSchool(request.getParameter("school"));
+			resume.setMajor(request.getParameter("major"));
+			resume.setEducation(request.getParameter("education"));
+			resume.setEmail(request.getParameter("email"));
+			resume.setPhone(request.getParameter("phone"));
+			resume.setForeignlanguage(request.getParameter("foreignlanguage"));
+			resume.setHobby(request.getParameter("hobby"));
+			resume.setPractice(request.getParameter("practice"));
+			resume.setPosition(request.getParameter("position"));
+			resume.setHonor(request.getParameter("honor"));
+			resume.setResearch(request.getParameter("research"));
+			resume.setSelfevaluation(request.getParameter("selfevaluation"));
+			System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaa:" + resume);
+			boolean flag = rd.updateResume(resume);
+			if (flag) {
+				this.gotoPage("public/success.jsp", request, response);
+			} else {
+				this.gotoPage("public/error.jsp", request, response);
+			}
+		}
 	}
 
 	private void gotoPage(String url, HttpServletRequest request, HttpServletResponse response)

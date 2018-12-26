@@ -124,13 +124,21 @@
     <servlet-name>MessageManageServlet</servlet-name>
     <url-pattern>/messageManage</url-pattern>
   </servlet-mapping>
-  
-   <servlet>
+  <servlet>
     <servlet-name>EmploymentManageServlet</servlet-name>
     <servlet-class>cn.yjpt.controller.EmploymentManageServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>EmploymentManageServlet</servlet-name>
     <url-pattern>/employmentManage</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>recruitresumeServlet</servlet-name>
+    <servlet-class>cn.yjpt.controller.recruitresumeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>recruitresumeServlet</servlet-name>
+    <url-pattern>/recruitresumeManage</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -16,35 +16,35 @@
 <div class="container">
 <ul class="menuitem">
 <li>
-<a href="/xyjygl/public/right.jsp" target="main">企业首页</a>
+<a href="/xyjygl/public/right.jsp" target="right">企业首页</a>
 </li>
 
-<li> <a href="/xyjygl/companyManage?action=edit"	target="main">修改资料</a>
-</li>
-
-<li>
-<a href="/xyjygl/companyManage?action=choose" target="main">发布招聘信息</a>
+<li> <a href="/xyjygl/companyManage?action=edit"	target="right">修改资料</a>
 </li>
 
 <li>
-<a  href="/xyjygl/recruitManage?action=recruitlist" target="main">管理招聘信息</a>
+<a href="/xyjygl/companyManage?action=choose" target="right">发布招聘信息</a>
+</li>
+ 
+<li>
+<a  href="/xyjygl/recruitManage?action=recruitlist" target="right">管理招聘信息</a>
 </li>
 
-<li><a href="/xyjygl/admin/publishEmployment.jsp" target="main">查看学生简历</a>
+<li><a href="/xyjygl/recruitresumeManage?action=list" target="right">查看学生简历</a>
 </li>
 
 <li>
-<a href="/xyjygl/public/register.jsp" target="main">查看就业信息</a>
+<a href="/xyjygl/employmentManage?action=list"  target="right">查看就业信息</a>
 </li>
 
-<li><a href="/xyjygl/public/message.jsp" target="main">给管理员留言</a>
+<li><a href="/xyjygl/public/message.jsp" target="right">给管理员留言</a>
 </li>
 
 <li>
-<a  href="/xyjygl/messageManage?action=list" target="main">查看管理员回复</a>
+<a  href="/xyjygl/messageManage?action=list" target="right">查看管理员回复</a>
 </li>
 
-<li><a href="/xyjygl/public/updatepassword.jsp" target="main">修改密码</a>
+<li><a href="/xyjygl/public/updatepassword.jsp" target="right">修改密码</a>
 </li>
 
 

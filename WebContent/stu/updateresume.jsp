@@ -1,15 +1,27 @@
-<%@ page language="java" import="java.util.*"
-    pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>修改简历</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>制作简历</title>
+ <script type="text/javascript" src="/xyjygl/js/datepicker.js" ></script>
 </head>
+<script type="text/javascript">
+function isEmail(str){
+	var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+	if(!reg.test(str)){
+	alert("邮件格式不正确!");
+	return false;
+	}
+	return true;
+	}
+
+</script>
 <body>
+
 <form action="/xyjygl/resumeManage" method="post">
 				<input type="hidden" name="action" value="update" />
-				<input type="hidden" name="sid" value="${student.sid}" />
+				<input type="hidden" name="sid" value="${resume.sid}" />
 <h4>简历信息</h4>
 <p>（*为必填项)</p>
 <table width="100%" border="0">
@@ -23,11 +35,20 @@
 <tr>
 <td width="15%">*出生日期:</td>
 <td width="35%">
- <input type="text" name="birthdate" style="width: 100px" value="${resume.birthdate }">
+ <input type="text" name="birthdate" style="width: 100px" onfocus="HS_setDate(this)" value="${resume.birthdate }">
 </td>
 
 <td width="15%">*民族:</td>
-<td width="35%">&nbsp;&nbsp; <input type="text" name="nation" value="${resume.nation }"></td>
+<td width="35%">&nbsp;&nbsp;
+<input type="text" name="nation" value="${resume.nation }">
+<!--   <select name="nation">
+									<option value="00" selected="selected">请选择</option>
+									<option value="汉">汉</option>
+									<option value="苗">苗</option>
+									<option value="藏">藏</option>
+									<option value="黎">黎</option>
+							</select>
+							-->
 							
 </tr>
 
@@ -36,7 +57,7 @@
 <td width="35%"><input type="text" name="politics" value="${resume.politics }"></td>
 <td width="15%">*毕业时间:</td>
 <td width="35%"> 
-<input type="text" name="graduation" style="width: 100px" value="${resume.graduation }">
+<input type="text" name="graduation" style="width: 100px" onfocus="HS_setDate(this)" value="${resume.graduation }">
 </td>
 </tr>
 
@@ -51,7 +72,7 @@
 <td width="15%">*学历:</td>
 <td width="35%"><input type="text" name="education" value="${resume.education }"></td>
 <td width="15%">*邮箱:</td>
-<td width="35%"><input type="text" name="email" id="email" value="${resume.email }"></td>
+<td width="35%"><input type="text" name="email" id="email" onblur="isEmail()" value="${resume.email}"></td>
 </tr>
  
 
@@ -59,7 +80,7 @@
 <td width="15%">*联系电话:</td>
 <td width="35%"><input type="text" name="phone" id="phone" value="${resume.phone }"></td>
 <td width="15%">*外语水平:</td> 
-<td width="35%"><input type="text" name="foreignlanguage" value="${resume.foreignlanguage }"></td>
+<td width="35%"><input type="text" name="foreignlanguage" value="${resume.foreignlanguage }" ></td>
 </tr>
 <tr>
 <td>特长爱好</td>
@@ -74,7 +95,7 @@
 
 <tr>
 <td>在学校担任职务：</td>
-<td><input type="text" name="position" style="width: 400px;height: 70px" value="${resume.position }"></td>
+<td><input type="text" name="position" style="width: 400px;height: 70px"  value="${resume.position}"></td>
 </tr>
 
 <tr>
@@ -94,12 +115,11 @@
 
 <tr>
 <td colspan="4"> 
-<input type="submit" name="Submit" value="提交">
+<input type="submit" name="Submit" value="修改">
 </td>
 </tr>
 
 </table>
 </form>
-
 </body>
 </html>

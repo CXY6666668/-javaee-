@@ -16,40 +16,40 @@
 <div class="container">
 <ul class="menuitem">
 <li>
-<a href="/xyjygl/public/right.jsp" target="main">首页</a>
+<a href="/xyjygl/public/right.jsp" target="right">首页</a>
 </li>
 
-<li><a href="/xyjygl/userManage?action=list" target="main">用户管理</a>
-</li>
-
-<li>
-<a href="/xyjygl/public/register.jsp" target="main">添加学生信息</a>
+<li><a href="/xyjygl/userManage?action=list" target="right">用户管理</a>
 </li>
 
 <li>
-<a href="/xyjygl/studentManage?action=studentlist" target="main">管理学生信息</a>
+<a href="/xyjygl/public/register.jsp" target="right">添加学生信息</a>
 </li>
 
 <li>
-<a href="/xyjygl/public/register.jsp" target="main">添加企业信息</a>
+<a href="/xyjygl/studentManage?action=studentlist" target="right">管理学生信息</a>
 </li>
 
-<li><a href="/xyjygl/companyManage?action=companylist" target="main">管理企业信息</a>
+<li>
+<a href="/xyjygl/public/register.jsp" target="right">添加企业信息</a>
+</li>
+
+<li><a href="/xyjygl/companyManage?action=companylist" target="right">管理企业信息</a>
 </li>
 
 <li> 
-<a  href="/xyjygl/recruitManage?action=recruitlist" target="main">管理招聘信息</a>
+<a  href="/xyjygl/recruitManage?action=recruitlist" target="right">管理招聘信息</a>
 </li>
 
-<li><a href="/xyjygl/admin/publishEmployment.jsp" target="main">发布就业信息</a>
+<li><a href="/xyjygl/admin/publishEmployment.jsp" target="right">发布就业信息</a>
 </li>
 
 <li> 
-<a href="/xyjygl/employmentManage?action=list" target="main">管理就业信息</a>
+<a href="/xyjygl/employmentManage?action=list" target="right">管理就业信息</a>
 </li>
 
 <li>
-<a href="/xyjygl/messageManage?action=list" target="main">留言管理</a>
+<a href="/xyjygl/messageManage?action=list" target="right">留言管理</a>
 </li>
 </ul>
 </div>

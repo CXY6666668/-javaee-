@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//WebContent/company/companyInfo.jsp=UTF-8
+encoding//WebContent/public/register.jsp=UTF-8
+encoding//WebContent/stu/resumeManage.jsp=UTF-8
+encoding//WebContent/stu/showStudent.jsp=UTF-8
+encoding//src/cn/yjpt/controller/MessageManageServlet.java=UTF-8
+encoding//src/cn/yjpt/controller/RecruitManageServlet.java=UTF-8
+encoding//src/cn/yjpt/dao/service/MessageDaoImpl.java=UTF-8

@@ -3,12 +3,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>修改简历</title>
+<title>查看简历</title>
 </head>
 <body>
 <form action="/xyjygl/resumeManage" method="post">
 				<input type="hidden" name="action" value="show" />
-				<input type="hidden" name="sid" value="${student.sid}" />
+				<input type="hidden" name="sid" value="${resume.sid}" />
 <h4>简历信息</h4>
 <p>（*为必填项)</p>
 <table width="100%" border="0">
@@ -91,10 +91,7 @@
 <td><input type="text" name="selfevaluation" style="width: 400px;height: 70px" value="${resume.selfevaluation }"></td>
 </tr>
 
-<tr>
-<td colspan="4"> 
-<input type="submit" name="Submit" value="提交">
-</td>
+
 </tr>
 
 </table>

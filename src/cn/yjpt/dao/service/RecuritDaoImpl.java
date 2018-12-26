@@ -170,7 +170,15 @@ public class RecuritDaoImpl implements RecuritDao {
 	@Override
 	public int doTotalPage(DoPage dopage) {
 		// TODO Auto-generated method stub
-		return 0;
+		int totalPage = 0;
+		// 定义m保存总记录数出一丝每页记录数的商
+		int m = doCount(dopage) / dopage.getPageSize();
+		if (doCount(dopage) % dopage.getPageSize() > 0) {
+			totalPage = m + 1;
+		} else {
+			totalPage = m;
+		}
+		return totalPage;
 	}
 
 	@Override

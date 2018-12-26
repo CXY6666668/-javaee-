@@ -38,7 +38,8 @@ public class StudentManageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		// response.getWriter().append("Served at:
+		// ").append(request.getContextPath());
 		this.doPost(request, response);
 	}
 
@@ -120,21 +121,18 @@ public class StudentManageServlet extends HttpServlet {
 			this.gotoPage("admin/studentList.jsp?sql=" + sql, request, response);
 			System.out.println(students);
 		}
-/*
-		if (action.equals("show")) {
-			HttpSession session = request.getSession();
-			User user = (User) session.getAttribute("user");
-			int sid = 0;
-			if (user.getUsertypes().equals("student")) {
-				sid = user.getId();
-			}else {
-				
-			}
-			Student student = sd.lookStudent(sid);
-			request.setAttribute("student", student);
-			this.gotoPage("stu/showStudent.jsp", request, response);
-		}
-*/
+		/*
+		 * if (action.equals("show")) { HttpSession session =
+		 * request.getSession(); User user = (User)
+		 * session.getAttribute("user"); int sid = 0; if
+		 * (user.getUsertypes().equals("student")) { sid = user.getId(); }else {
+		 * 
+		 * } Student student = sd.lookStudent(sid);
+		 * request.setAttribute("student", student);
+		 * this.gotoPage("stu/showStudent.jsp", request, response); }
+		 * 
+		 */
+
 		if (action.equals("delete")) {
 			String sidstr = request.getParameter("sid").trim();
 			int sid = 0;
