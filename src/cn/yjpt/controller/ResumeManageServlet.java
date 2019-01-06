@@ -131,6 +131,29 @@ public class ResumeManageServlet extends HttpServlet {
 			this.gotoPage("stu/updateresume.jsp", request, response);
 		}
 
+		if (action.equals("show")) {
+			System.out.println("查看学生简历");
+			Resume resume = new Resume();
+			// 从session对象中取出封装的user属性的值，赋值给User对象
+			User u = (User) session.getAttribute("user");
+			int sid = 0;
+			if (u.getUsertypes().equals("student")) {
+				// 使用用户id设置为学生sid的属性值
+				sid = u.getId();
+			} else {
+				// 获取请求参数sid的值，并且转化为整数
+				sid = Integer.parseInt(request.getParameter("sid"));
+			}
+			// 查询学生档案信息
+			resume = rd.lookResume(sid);
+			// 把查询到的resume对象封装到request属性中
+			request.setAttribute("resume", resume);
+			// 转到stu/studenteresumeedit.jsp页面
+			this.gotoPage("stu/showresumeManage.jsp", request, response);
+		} else {
+			System.out.println("查看不了学生简历");
+		}
+
 		if (action.equals("update")) {
 			Resume resume = new Resume();
 			int sid = 0;
